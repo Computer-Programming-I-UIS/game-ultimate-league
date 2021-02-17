@@ -1,7 +1,7 @@
 class Nave{
   float posx;
   float posy;
-  float aceleracion= 0.02;
+  float aceleracion= 0.05;
   float velocidad;
   float velocidadMin = 0.0;
   float velocidadMax = 5.0;
@@ -45,7 +45,7 @@ class Nave{
         rotacion -= 2; 
       }    
       if( keyCode == RIGHT && keyPressed){
-        rotacion += 1;
+        rotacion += 2;
       }
   
       if( posx > width+10 )         { posx = width-width-10; }

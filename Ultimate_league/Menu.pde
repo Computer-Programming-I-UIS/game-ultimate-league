@@ -61,7 +61,6 @@ class Menu{
   void gameover(){
      fondo4 = loadImage("000802584.jpg");
      image(fondo4,0,0);
-    
      if(key=='r'&& keyPressed == true){
        game=3;
      }

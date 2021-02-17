@@ -7,7 +7,6 @@ PVector posicion;
 float numast = 4;
 Minim intro;
 AudioPlayer player;
-AudioPlayer start;
 Menu menu;
 Mapa mapa;
 Nave nave;
@@ -22,7 +21,6 @@ void setup(){
   fondo = loadImage("0802584.jpg");
   intro = new Minim(this);
   player = intro.loadFile("0808.wav");
-  start = intro.loadFile("SpaceFMin.wav");
   font = createFont("Century Gothic", 100);
   menu = new Menu(); 
   mapa = new Mapa();

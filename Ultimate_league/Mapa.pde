@@ -35,6 +35,9 @@ class Mapa{
     }
     fill(255);
     ellipse(760,40,40,40);
+    fill(0);
+    textSize(16);
+    text("salir", 745, 45);
     if(mouseX>740 && mouseX<780 && mouseY >20 && mouseY<60 && mousePressed){
       game=4;
     }
