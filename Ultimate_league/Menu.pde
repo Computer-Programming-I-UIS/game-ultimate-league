@@ -1,5 +1,5 @@
 class Menu{
-  PImage fondo2, fondo3;
+  PImage fondo2, fondo3, fondo4;
   int radio=55;
   
    Menu(){
@@ -56,5 +56,19 @@ class Menu{
          
         }
     }
+  }
+  
+  void gameover(){
+     fondo4 = loadImage("000802584.jpg");
+     image(fondo4,0,0);
+    
+     if(key=='r'&& keyPressed == true){
+       game=3;
+     }
+     if(key=='m'&& keyPressed == true){
+       game=1;
+     }
+     
+     
   }
 }

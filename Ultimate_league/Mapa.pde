@@ -33,6 +33,11 @@ class Mapa{
         puntoy[i] = 0;
       }
     }
+    fill(255);
+    ellipse(760,40,40,40);
+    if(mouseX>740 && mouseX<780 && mouseY >20 && mouseY<60 && mousePressed){
+      game=4;
+    }
   }
   
   

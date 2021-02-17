@@ -19,7 +19,7 @@ class Nave{
       stroke(255);
       pushMatrix();
        translate(posx, posy);
-       rotate( radians(rotacion) );
+       rotate(radians(rotacion));
        image(nave,0,0);
        beginShape();
        vertex(  20,   0 );

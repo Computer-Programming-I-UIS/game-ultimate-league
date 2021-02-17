@@ -66,4 +66,7 @@ void draw(){
     }
     nave.poner();
   }
+  if(game==4){
+    menu.gameover();
+  }
 }
