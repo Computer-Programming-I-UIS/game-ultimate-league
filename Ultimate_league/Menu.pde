@@ -1,10 +1,12 @@
 class Menu{
+  
   PImage fondo2, fondo3, fondo4;
   int radio=55;
+  AudioPlayer gameover;
   
    Menu(){
-    
-  }
+     gameover = intro.loadFile("GameOver.wav");
+   }
   
   void poner(){
     fondo2 = loadImage("00802584.jpg");
@@ -61,6 +63,7 @@ class Menu{
   void gameover(){
      fondo4 = loadImage("000802584.jpg");
      image(fondo4,0,0);
+     gameover.play();
      if(key=='r'&& keyPressed == true){
        game=3;
      }
