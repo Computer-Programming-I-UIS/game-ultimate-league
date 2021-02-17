@@ -34,22 +34,26 @@ class Menu{
     println(mouseX);
     println(mouseY);
     instruccion();
-    fill(75, 255, 255);
-    textSize(12);
-    text("FPS:" + frameRate, width-64, height-8);
+    
     
   }
   
   void instruccion(){
-       float data[] = { 204.0, 336.0, 477.0 }; // arreglo con la posicion en y de los botones
+       float data[] = { 217.0, 347.0, 483.0 }; // arreglo con la posicion en y de los botones
     for(int n=0; n <data.length;n++){ 
       float d = dist(mouseX, mouseY, 212, data[n]);
+      //ellipse(212,data[0], radio*2, radio*2);
+      //ellipse(212,data[1], radio*2, radio*2);
+      //ellipse(212,data[2], radio*2, radio*2);
         if(d<radio&&data[n]==data[0]&&mouseButton==LEFT&&mousePressed){
-          player.play();
-        }else if(d<radio&&data[n]==data[1]&&mouseButton==LEFT&&mousePressed){
           player.pause();
+          
+        }else if(d<radio&&data[n]==data[1]&&mouseButton==LEFT&&mousePressed){
+          player.play();
+          
         }else if(d<radio&&data[n]==data[2]&&mouseButton==LEFT&&mousePressed){
           game=1; 
+         
         }
     }
   }

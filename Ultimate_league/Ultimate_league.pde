@@ -34,6 +34,9 @@ void setup(){
 
 void draw(){
   background(6,0,30);
+  fill(75, 255, 255);
+    textSize(12);
+    text("FPS:" + frameRate, width-64, height-8);
   
   if (game==0){
     
