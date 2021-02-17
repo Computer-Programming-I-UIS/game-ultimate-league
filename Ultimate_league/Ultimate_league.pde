@@ -48,6 +48,9 @@ void draw(){
     menu.poner();
   }
   if(game==2){
+    menu.opciones();
+  }
+  if(game==3){
     
     player.pause();
     mapa.poner();
