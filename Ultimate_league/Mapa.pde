@@ -24,6 +24,7 @@ class Mapa{
     rectMode(CENTER);
     for (int i=0; i<punto; i++) {
       fill(random(200),random(100),random(255));
+      noStroke();
       rect(puntox[i], puntoy[i], 4, 4);
     }
     for (int i=0;i<punto;i++) {

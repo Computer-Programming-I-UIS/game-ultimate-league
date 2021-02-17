@@ -26,6 +26,7 @@ void setup(){
   font = createFont("Century Gothic", 100);
   menu = new Menu(); 
   mapa = new Mapa();
+  nave = new Nave(0,0);
   for (int i = 0; i < numast; i++) {
     asteroids.add(new Asteroides(posicion, random(80, 100), 1));
   }
@@ -54,10 +55,8 @@ void draw(){
     menu.opciones();
   }
   if(game==3){
-    
     player.pause();
     mapa.poner();
-   
     for (int i = 0; i < asteroids.size(); i++) {
       fill(255);
       Asteroides asteroides = asteroids.get(i);
@@ -65,28 +64,6 @@ void draw(){
       asteroides.update();
       asteroides.wrap();
     }
-  }
-}
-
-void keyReleased() {
-  setMove(keyCode, false);
-}
-
-boolean setMove(int k, boolean b) { //"switch" is similar to the "else if" structure 
-  switch (k) {
-  case UP:
-    return isUp = b;
-
-  case LEFT:
-    return isLeft = b;
-
-  case RIGHT:
-    return isRight = b;
-
-  case CONTROL:
-    return isCtrl = b;
-
-  default:
-    return b;
+    nave.poner();
   }
 }
