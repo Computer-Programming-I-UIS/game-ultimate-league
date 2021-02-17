@@ -32,11 +32,11 @@ Public Domain Dedication
 
 Clasificacion 
 
-PEGI 12
+PEGI 12.
 
-ESRB EVERYONE 10+
+ESRB EVERYONE 10+.
 
 Imagenes
 
-![0802584](https://user-images.githubusercontent.com/73330780/108164724-5b6f0900-70bf-11eb-85a4-5522480d4b51.jpg)
+![0802584](https://user-images.githubusercontent.com/73330780/108179890-21f4c880-70d4-11eb-8068-022d7f96d08f.jpg)
 ![000802584](https://user-images.githubusercontent.com/73330780/108164855-996c2d00-70bf-11eb-9a2d-38951a39fc68.jpg)
