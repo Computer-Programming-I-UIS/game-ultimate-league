@@ -33,6 +33,7 @@ Public Domain Dedication
 Clasificacion 
 
 PEGI 12
+
 ESRB EVERYONE 10+
 
 Imagenes
