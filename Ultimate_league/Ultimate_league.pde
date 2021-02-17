@@ -24,7 +24,7 @@ void setup(){
   font = createFont("Century Gothic", 100);
   menu = new Menu(); 
   mapa = new Mapa();
-  nave = new Nave(0,0);
+  nave = new Nave(400,300);
   for (int i = 0; i < numast; i++) {
     asteroids.add(new Asteroides(posicion, random(80, 100), 1));
   }
