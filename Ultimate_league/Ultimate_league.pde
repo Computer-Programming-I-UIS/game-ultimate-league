@@ -5,7 +5,7 @@ int estado = 0, game=0;
 PFont font;
 PImage fondo;
 PVector posicion;
-float numast = 6;
+float numast = 4;
 Minim intro;
 AudioPlayer player;
 AudioPlayer gameover;
@@ -39,11 +39,11 @@ void setup(){
   for (int i = 0; i < numast; i++) {
     asteroids.add(new Asteroides(posicion, random(80, 100), 1));
   }
- scale(0.5);
+ //scale(0.9);
  player.loop();
- player.setGain(-15);
+ player.setGain(-10);
  ingame.loop();
- ingame.setGain(-15);
+ ingame.setGain(-10);
  ingame.pause();
 }
 

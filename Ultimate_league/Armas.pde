@@ -1,8 +1,5 @@
 class Armas {
-//The bullet object that gets fired from the ship at the asteroids.
-//It handles its own movement, drawing, and resets its variables when
-//being recycled
-
+ 
   PVector bulletPosition;                    //position and velocity vectors used in the calculation
   PVector bulletVelocity;                    //of movement. There is no acceleration vector because they have a constant speed
   boolean bulletHidden;                      //determines whether physics should be updated and if it should be drawn or not
