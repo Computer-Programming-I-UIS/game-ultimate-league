@@ -25,7 +25,7 @@ class Mapa{
     for (int i=0; i<punto; i++) {
       fill(random(200),random(100),random(255));
       noStroke();
-      rect(puntox[i], puntoy[i], 4, 4);
+      rect(puntox[i], puntoy[i], 3, 3);
     }
     for (int i=0;i<punto;i++) {
       puntoy[i]+= puntoVel[i];

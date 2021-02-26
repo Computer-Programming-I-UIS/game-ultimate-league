@@ -1,18 +1,23 @@
 import ddf.minim.*;
+
 boolean isLeft, isRight, isUp, isCtrl;
 int estado = 0, game=0;
 PFont font;
 PImage fondo;
 PVector posicion;
-float numast = 4;
+float numast = 1;
+
+
 Minim intro;
 AudioPlayer player;
 Menu menu;
 Mapa mapa;
 Nave nave;
 
+
 ArrayList<Asteroides> asteroids = new ArrayList<Asteroides>();
-final int numberAsteroids = 4;
+ArrayList<Armas> armas;
+
 
 
 void setup(){
@@ -40,9 +45,14 @@ void draw(){
   if (game==0){
     
     image(fondo,0,0);
+    
     player.play();
+    //player.shiftGain(player.getGain(),-80, FADE);
+    player.setGain(-15);
+    
     if(keyPressed || mousePressed){
       game=1;
+      mousePressed=false;
     }
   }
   if(game==1){
@@ -53,6 +63,7 @@ void draw(){
     menu.opciones();
   }
   if(game==3){
+    
     player.pause();
     mapa.poner();
     for (int i = 0; i < asteroids.size(); i++) {
@@ -62,6 +73,7 @@ void draw(){
       asteroides.update();
       asteroides.wrap();
     }
+    
     nave.poner();
   }
   if(game==4){

@@ -16,14 +16,19 @@ class Menu{
    
   }
   void boton(){
-    float data[] = { 204.0, 336.0, 477.0 }; // arreglo con la posicion en y de los botones
+    float data[] = {88.0, 215.0, 345.0, 477.0 }; // arreglo con la posicion en y de los botones
     for(int n=0; n <data.length;n++){ 
       float d = dist(mouseX, mouseY, 145, data[n]);
         if(d<radio&&data[n]==data[0]&&mouseButton==LEFT&&mousePressed){
           game=3;
+          mousePressed=false;
         }else if(d<radio&&data[n]==data[1]&&mouseButton==LEFT&&mousePressed){
           game=2;
+          mousePressed=false;
         }else if(d<radio&&data[n]==data[2]&&mouseButton==LEFT&&mousePressed){
+          
+          
+        }else if(d<radio&&data[n]==data[3]&&mouseButton==LEFT&&mousePressed){
           exit(); 
         }
     }
@@ -49,12 +54,15 @@ class Menu{
       //ellipse(212,data[2], radio*2, radio*2);
         if(d<radio&&data[n]==data[0]&&mouseButton==LEFT&&mousePressed){
           player.pause();
+          mousePressed=false;
           
         }else if(d<radio&&data[n]==data[1]&&mouseButton==LEFT&&mousePressed){
           player.play();
+          mousePressed=false;
           
         }else if(d<radio&&data[n]==data[2]&&mouseButton==LEFT&&mousePressed){
-          game=1; 
+          game=1;
+          mousePressed=false;
          
         }
     }
@@ -66,9 +74,19 @@ class Menu{
      gameover.play();
      if(key=='r'&& keyPressed == true){
        game=3;
+        if(game==3){
+        nave.posx=width/2;
+        nave.posy=height/2;
+        nave.velocidad=0;
+      }
      }
      if(key=='m'&& keyPressed == true){
        game=1;
+        if(game==1){
+        nave.posx=width/2;
+        nave.posy=height/2;
+        nave.velocidad=0;
+      }
      }
      
      

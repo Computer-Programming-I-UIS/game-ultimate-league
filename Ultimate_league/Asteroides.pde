@@ -34,9 +34,10 @@ class Asteroides{
     pushMatrix();
     translate(pos.x, pos.y);
     beginShape();
-    //ellipse(0, 0, r*2, r*2);
     rotate(PI/6);
+    ellipse(0, 0, r*2, r*1.05);
     image(skin, -r, -r, r*2, r*1.5);
+    //ellipse(-r, -r, r*2, r*2);
     endShape(CLOSE);
     popMatrix();
   }
