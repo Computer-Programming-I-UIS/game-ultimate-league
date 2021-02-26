@@ -1,7 +1,7 @@
 import ddf.minim.*;
 
 boolean isLeft, isRight, isUp, isCtrl;
-int estado = 0, game=0;
+int estado = 0, game=0, sonido=0;
 PFont font;
 PImage fondo;
 PVector posicion;

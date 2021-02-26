@@ -22,7 +22,9 @@ class Menu{
           game=3;
           mousePressed=false;
           soundMenu.play();
+          if(sonido==0){
           ingame.play();
+          }
         }else if(d<radio&&data[n]==data[1]&&mouseButton==LEFT&&mousePressed){
           game=2;
           
@@ -50,11 +52,13 @@ class Menu{
       float d = dist(mouseX, mouseY, 212, data[n]);
         if(d<radio&&data[n]==data[0]&&mouseButton==LEFT&&mousePressed){
           player.pause();
+          sonido=1;
           mousePressed=false;
           soundMenu.play();
           
         }else if(d<radio&&data[n]==data[1]&&mouseButton==LEFT&&mousePressed){
           player.play();
+          sonido=0;
           mousePressed=false;
           soundMenu.play();
           
@@ -75,7 +79,9 @@ class Menu{
         nave.posx=width/2;
         nave.posy=height/2;
         nave.velocidad=0;
-        ingame.play();
+        if(sonido==0){
+          ingame.play();
+        }
       }
      }
      if(key=='m'&& keyPressed == true){
@@ -84,7 +90,9 @@ class Menu{
         nave.posx=width/2;
         nave.posy=height/2;
         nave.velocidad=0;
-        player.play();
+        if(sonido==0){
+          player.play();
+        }
       }
     }
   }
