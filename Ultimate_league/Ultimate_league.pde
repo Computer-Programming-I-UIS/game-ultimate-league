@@ -65,9 +65,15 @@ void keyPressed() {
   } else if ((key == ' ')) {
     if (frameCount % 1 == 0) {
       armas.add(new Armas(nave.posicion, nave.direccion));
+      disparo.play();
+        if ( disparo.isPlaying() == true)
+        {
+          disparo.rewind();
+        }
     }
-  }
+  } 
 }
+
 
 void keyReleased() {
   if (keyCode == RIGHT) {
@@ -93,17 +99,18 @@ void draw(){
     if(keyPressed || mousePressed){
       game=1;
       mousePressed=false;
+      
     }
   }
   if(game==1){
     
     menu.poner();
    
+   
   } 
   if(game==2){
     menu.opciones();
-    soundMenu.play();
-     
+    
   }
   if(game==3){
     bandera=0;
@@ -198,7 +205,9 @@ void draw(){
     }
   }
   if(game==5){
+    
     menu.creditos();
-    soundMenu.play();
+    
   }
+  
 }

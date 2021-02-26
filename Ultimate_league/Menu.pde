@@ -27,19 +27,18 @@ class Menu{
           }
         }else if(d<radio&&data[n]==data[1]&&mouseButton==LEFT&&mousePressed){
           game=2;
-          
           mousePressed=false;
         }else if(d<radio&&data[n]==data[2]&&mouseButton==LEFT&&mousePressed){
           game=5;
-          soundMenu.play();
           mousePressed=false;
         }else if(d<radio&&data[n]==data[3]&&mouseButton==LEFT&&mousePressed){
           soundMenu.play();
           exit(); 
         }
+      }
     }
-     
-  }
+  
+  
   void opciones(){
     fondo3 = loadImage("opciones.jpg");
     image(fondo3,0,0);
@@ -54,18 +53,16 @@ class Menu{
           player.pause();
           sonido=1;
           mousePressed=false;
-          soundMenu.play();
-          
+        
         }else if(d<radio&&data[n]==data[1]&&mouseButton==LEFT&&mousePressed){
           player.play();
           sonido=0;
-          mousePressed=false;
-          soundMenu.play();
-          
+           mousePressed=false;
+         
         }else if(d<radio&&data[n]==data[2]&&mouseButton==LEFT&&mousePressed){
           game=1;
           mousePressed=false;
-          soundMenu.play();
+          
         }
      }
   }
