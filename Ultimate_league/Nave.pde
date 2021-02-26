@@ -79,6 +79,7 @@ class Nave{
     float d = dist(posicion.x, posicion.y, apos.x, apos.y);
     //ellipse(apos.x, apos.y, ar, ar);
     if((d <= r + ar )){
+      
       return true;
     } else {
       return false;

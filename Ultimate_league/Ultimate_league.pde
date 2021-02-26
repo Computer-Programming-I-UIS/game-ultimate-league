@@ -20,6 +20,7 @@ AudioPlayer gameover;
 AudioPlayer disparo;
 AudioPlayer soundMenu;
 AudioPlayer impacto;
+AudioPlayer explocion;
 AudioPlayer moveNave;
 AudioPlayer ingame;
 Menu menu;
@@ -38,6 +39,7 @@ void setup(){
   disparo = intro.loadFile("shoot.wav");
   soundMenu = intro.loadFile("movex.wav");
   impacto = intro.loadFile("hit.wav");
+  explocion = intro.loadFile("explocion.wav");
   moveNave = intro.loadFile("move.wav");
   ingame = intro.loadFile("ingame.mp3");
   font = createFont("Century Gothic", 100);
@@ -66,6 +68,7 @@ void keyPressed() {
     if (frameCount % 1 == 0) {
       armas.add(new Armas(nave.posicion, nave.direccion));
       disparo.play();
+      disparo.setGain(-10);
         if ( disparo.isPlaying() == true)
         {
           disparo.rewind();
@@ -122,7 +125,13 @@ void draw(){
       Asteroides asteroides = asteroids.get(i);
       asteroides.poner();
       if ((nave.colision(asteroides.posicion, asteroides.r)) && (nave.inmunidad == false)) {
+        explocion.play();
+        explocion.setGain(50);
+            if(explocion.isPlaying()==true){
+              explocion.rewind();
+            }
         game = 4;
+        
       }
     }
       stroke(255);
@@ -137,6 +146,10 @@ void draw(){
         for (int j = asteroids.size()-1; j >= 0; j--) {
           Asteroides asteroide = asteroids.get(j);
           if (arma.colision(asteroide.posicion, asteroide.r)) {
+            explocion.play();
+            if(explocion.isPlaying()==true){
+              explocion.rewind();
+            }
             if (asteroide.r > 30) {
               ArrayList<Asteroides> newAsteroids = asteroide.romper();
               asteroids.addAll(newAsteroids);
