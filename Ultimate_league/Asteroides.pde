@@ -30,19 +30,19 @@ class Asteroides{
     pos.add(vel);
   }
   
-  void render(){
+  void poner(){
     pushMatrix();
     translate(pos.x, pos.y);
     beginShape();
     rotate(PI/6);
-    ellipse(0, 0, r*2, r*1.05);
+    //ellipse(0, 0, r*2, r*1.05);
     image(skin, -r, -r, r*2, r*1.5);
     //ellipse(-r, -r, r*2, r*2);
     endShape(CLOSE);
     popMatrix();
   }
   
-  ArrayList breakup(){
+  ArrayList romper(){
     ArrayList<Asteroides> newA = new ArrayList<Asteroides>();
     newA.add(new Asteroides(pos, r*0.65, iteration+1));
     newA.add(new Asteroides(pos, r*0.65, iteration+1));

@@ -40,6 +40,7 @@ class Mapa{
     text("salir", 745, 45);
     if(mouseX>740 && mouseX<780 && mouseY >20 && mouseY<60 && mousePressed){
       game=4;
+      gameover.play();
     }
   }
   

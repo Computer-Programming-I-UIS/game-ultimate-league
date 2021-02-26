@@ -5,25 +5,31 @@ int estado = 0, game=0;
 PFont font;
 PImage fondo;
 PVector posicion;
-float numast = 4;
+float numast = 6;
 Minim intro;
 AudioPlayer player;
+AudioPlayer gameover;
+AudioPlayer disparo;
+AudioPlayer soundMenu;
+AudioPlayer impacto;
+AudioPlayer moveNave;
 Menu menu;
 Mapa mapa;
 Nave nave;
-
-
 ArrayList<Asteroides> asteroids = new ArrayList<Asteroides>();
 ArrayList<Armas> armas;
-
-
 
 void setup(){
   size(800,600);
   frameRate(60);
   fondo = loadImage("0802584.jpg");
   intro = new Minim(this);
-  player = intro.loadFile("0808.wav");
+  player = intro.loadFile("throughspace.wav");
+  gameover = intro.loadFile("GameOver.wav");
+  disparo = intro.loadFile("shoot.wav");
+  soundMenu = intro.loadFile("movex.wav");
+  impacto = intro.loadFile("hitr.wav");
+  moveNave = intro.loadFile("move.wav");
   font = createFont("Century Gothic", 100);
   menu = new Menu(); 
   mapa = new Mapa();
@@ -41,33 +47,34 @@ void draw(){
     text("FPS:" + frameRate, width-64, height-8);
   
   if (game==0){
-    
     image(fondo,0,0);
-    
     player.play();
     //player.shiftGain(player.getGain(),-80, FADE);
     player.setGain(-15);
-    
     if(keyPressed || mousePressed){
       game=1;
+      soundMenu.play();
       mousePressed=false;
     }
   }
   if(game==1){
     
     menu.poner();
+    soundMenu.play();
   }
   if(game==2){
     menu.opciones();
+    soundMenu.play();
   }
   if(game==3){
     
+    soundMenu.play();
     player.pause();
     mapa.poner();
     for (int i = 0; i < asteroids.size(); i++) {
       fill(255);
       Asteroides asteroides = asteroids.get(i);
-      asteroides.render();
+      asteroides.poner();
       asteroides.update();
       asteroides.wrap();
     }
@@ -76,8 +83,10 @@ void draw(){
   }
   if(game==4){
     menu.gameover();
+    soundMenu.play();
   }
   if(game==5){
     menu.creditos();
+    soundMenu.play();
   }
 }

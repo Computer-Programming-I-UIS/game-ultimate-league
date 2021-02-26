@@ -2,10 +2,10 @@ class Menu{
   
   PImage fondo2, fondo3, fondo4, fondo5;
   int radio=55;
-  AudioPlayer gameover;
+
   
    Menu(){
-     gameover = intro.loadFile("GameOver.wav");
+     
    }
   
   void poner(){
@@ -21,13 +21,17 @@ class Menu{
         if(d<radio&&data[n]==data[0]&&mouseButton==LEFT&&mousePressed){
           game=3;
           mousePressed=false;
+          soundMenu.play();
         }else if(d<radio&&data[n]==data[1]&&mouseButton==LEFT&&mousePressed){
           game=2;
+          soundMenu.play();
           mousePressed=false;
         }else if(d<radio&&data[n]==data[2]&&mouseButton==LEFT&&mousePressed){
           game=5;
+          soundMenu.play();
           mousePressed=false;
         }else if(d<radio&&data[n]==data[3]&&mouseButton==LEFT&&mousePressed){
+          soundMenu.play();
           exit(); 
         }
     }
@@ -36,10 +40,7 @@ class Menu{
   void opciones(){
     fondo3 = loadImage("opciones.jpg");
     image(fondo3,0,0);
-    println(mouseX);
-    println(mouseY);
     instruccion();
-
   }
   
   void instruccion(){
@@ -49,14 +50,17 @@ class Menu{
         if(d<radio&&data[n]==data[0]&&mouseButton==LEFT&&mousePressed){
           player.pause();
           mousePressed=false;
+          soundMenu.play();
           
         }else if(d<radio&&data[n]==data[1]&&mouseButton==LEFT&&mousePressed){
           player.play();
           mousePressed=false;
+          soundMenu.play();
           
         }else if(d<radio&&data[n]==data[2]&&mouseButton==LEFT&&mousePressed){
           game=1;
           mousePressed=false;
+          soundMenu.play();
         }
      }
   }
@@ -64,7 +68,6 @@ class Menu{
   void gameover(){
      fondo4 = loadImage("000802584.jpg");
      image(fondo4,0,0);
-     gameover.play();
      if(key=='r'&& keyPressed == true){
        game=3;
         if(game==3){
@@ -79,6 +82,7 @@ class Menu{
         nave.posx=width/2;
         nave.posy=height/2;
         nave.velocidad=0;
+        player.play();
       }
     }
   }
