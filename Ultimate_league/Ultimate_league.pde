@@ -5,9 +5,7 @@ int estado = 0, game=0;
 PFont font;
 PImage fondo;
 PVector posicion;
-float numast = 1;
-
-
+float numast = 4;
 Minim intro;
 AudioPlayer player;
 Menu menu;
@@ -78,5 +76,8 @@ void draw(){
   }
   if(game==4){
     menu.gameover();
+  }
+  if(game==5){
+    menu.creditos();
   }
 }
