@@ -34,14 +34,14 @@ destruye todos los asteroides que puedas, recuerda que estos de dividen cada vez
 
 * NettySvit imagenes(nave y meteoro)
 
- OpenGameArt
- CC0 1.0 Universal (CC0 1.0)
- Public Domain Dedication
+   OpenGameArt
+   CC0 1.0 Universal (CC0 1.0)
+   Public Domain Dedication
 * TinyWorlds(sonidos)
 
- OpenGameArt
- CC0 1.0 Universal (CC0 1.0)
- Public Domain Dedication
+   OpenGameArt
+   CC0 1.0 Universal (CC0 1.0)
+   Public Domain Dedication
  
 ---
 ## Clasificacion 
@@ -51,7 +51,7 @@ destruye todos los asteroides que puedas, recuerda que estos de dividen cada vez
 ---
 ## Imagenes
 
-![ejemplo](https://user-images.githubusercontent.com/73330780/109268315-e4c9be00-77d8-11eb-9b80-051b93cd1997.png)
+![Sin título](https://user-images.githubusercontent.com/73330780/109302659-98e23d80-7807-11eb-8294-0171cf3f8615.png)
 ![creditos](https://user-images.githubusercontent.com/73330780/109268210-bb109700-77d8-11eb-9fa5-87adeae1c0a6.png)
 ![00802584](https://user-images.githubusercontent.com/73330780/109268218-bfd54b00-77d8-11eb-8134-a566d1af8587.jpg)
-![000802584](https://user-images.githubusercontent.com/73330780/108164855-996c2d00-70bf-11eb-9a2d-38951a39fc68.jpg)
+![Sin título2](https://user-images.githubusercontent.com/73330780/109302662-9a136a80-7807-11eb-8591-a5da887cc8d8.png)
