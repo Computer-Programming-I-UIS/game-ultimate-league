@@ -46,7 +46,7 @@ destruye todos los asteroides que puedas, recuerda que estos de dividen cada vez
 ---
 ## Clasificacion 
 
-![12](https://user-images.githubusercontent.com/73330780/109273799-aa641f00-77e0-11eb-98b9-caa21de27da0.png)
+![12](https://user-images.githubusercontent.com/73330780/109273990-eeefba80-77e0-11eb-87ca-59044a44caf8.png)
 
 ---
 ## Imagenes
