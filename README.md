@@ -46,9 +46,7 @@ destruye todos los asteroides que puedas, recuerda que estos de dividen cada vez
 ---
 ## Clasificacion 
 
-PEGI 12.
-
-ESRB EVERYONE 10+.
+![12](https://user-images.githubusercontent.com/73330780/109273799-aa641f00-77e0-11eb-98b9-caa21de27da0.png)
 
 ---
 ## Imagenes
