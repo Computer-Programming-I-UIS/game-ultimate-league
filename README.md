@@ -53,4 +53,7 @@ ESRB EVERYONE 10+.
 ---
 ## Imagenes
 
+![ejemplo](https://user-images.githubusercontent.com/73330780/109268315-e4c9be00-77d8-11eb-9b80-051b93cd1997.png)
+![creditos](https://user-images.githubusercontent.com/73330780/109268210-bb109700-77d8-11eb-9fa5-87adeae1c0a6.png)
+![00802584](https://user-images.githubusercontent.com/73330780/109268218-bfd54b00-77d8-11eb-8134-a566d1af8587.jpg)
 ![000802584](https://user-images.githubusercontent.com/73330780/108164855-996c2d00-70bf-11eb-9a2d-38951a39fc68.jpg)
