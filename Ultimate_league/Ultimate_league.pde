@@ -13,6 +13,7 @@ AudioPlayer disparo;
 AudioPlayer soundMenu;
 AudioPlayer impacto;
 AudioPlayer moveNave;
+AudioPlayer ingame;
 Menu menu;
 Mapa mapa;
 Nave nave;
@@ -28,8 +29,9 @@ void setup(){
   gameover = intro.loadFile("GameOver.wav");
   disparo = intro.loadFile("shoot.wav");
   soundMenu = intro.loadFile("movex.wav");
-  impacto = intro.loadFile("hitr.wav");
+  impacto = intro.loadFile("hit.wav");
   moveNave = intro.loadFile("move.wav");
+  ingame = intro.loadFile("ingame.mp3");
   font = createFont("Century Gothic", 100);
   menu = new Menu(); 
   mapa = new Mapa();
@@ -38,9 +40,15 @@ void setup(){
     asteroids.add(new Asteroides(posicion, random(80, 100), 1));
   }
  scale(0.5);
+ player.loop();
+ player.setGain(-15);
+ ingame.loop();
+ ingame.setGain(-15);
+ ingame.pause();
 }
 
 void draw(){
+  
   background(6,0,30);
   fill(75, 255, 255);
     textSize(12);
@@ -48,23 +56,21 @@ void draw(){
   
   if (game==0){
     image(fondo,0,0);
-    player.play();
     //player.shiftGain(player.getGain(),-80, FADE);
-    player.setGain(-15);
     if(keyPressed || mousePressed){
       game=1;
-      soundMenu.play();
       mousePressed=false;
     }
   }
   if(game==1){
     
     menu.poner();
-    soundMenu.play();
-  }
+   
+  } 
   if(game==2){
     menu.opciones();
     soundMenu.play();
+     
   }
   if(game==3){
     

@@ -22,9 +22,10 @@ class Menu{
           game=3;
           mousePressed=false;
           soundMenu.play();
+          ingame.play();
         }else if(d<radio&&data[n]==data[1]&&mouseButton==LEFT&&mousePressed){
           game=2;
-          soundMenu.play();
+          
           mousePressed=false;
         }else if(d<radio&&data[n]==data[2]&&mouseButton==LEFT&&mousePressed){
           game=5;
@@ -74,6 +75,7 @@ class Menu{
         nave.posx=width/2;
         nave.posy=height/2;
         nave.velocidad=0;
+        ingame.play();
       }
      }
      if(key=='m'&& keyPressed == true){

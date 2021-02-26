@@ -41,6 +41,7 @@ class Mapa{
     if(mouseX>740 && mouseX<780 && mouseY >20 && mouseY<60 && mousePressed){
       game=4;
       gameover.play();
+      ingame.pause();
     }
   }
   
