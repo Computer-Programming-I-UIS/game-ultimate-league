@@ -16,10 +16,13 @@ destruye todos los asteroides que puedas, recuerda que estos de dividen cada vez
 ---
 ## Controles
 
- *Flecha arriba = acelerar
- *Flecha izq = rotar izq
- *Flecha drch = rotar drch
- *Espacio = disparo
+ * Flecha arriba = acelerar
+ 
+ * Flecha izq = rotar izq
+ 
+ * Flecha drch = rotar drch
+ 
+ * Espacio = disparo
  
 ---
 ## Requisitos
@@ -29,11 +32,13 @@ destruye todos los asteroides que puedas, recuerda que estos de dividen cada vez
 ---
 ## Agradecimientos
 
-*NettySvit imagenes(nave y meteoro)
+* NettySvit imagenes(nave y meteoro)
+
  OpenGameArt
  CC0 1.0 Universal (CC0 1.0)
  Public Domain Dedication
-*TinyWorlds(sonidos)
+* TinyWorlds(sonidos)
+
  OpenGameArt
  CC0 1.0 Universal (CC0 1.0)
  Public Domain Dedication
