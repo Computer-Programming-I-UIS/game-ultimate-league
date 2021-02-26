@@ -1,67 +1,95 @@
 class Nave{
-  float posx;
-  float posy;
-  float aceleracion;
-  float velocidad;
-  float velocidadMin = 0.0;
-  float velocidadMax = 5.0;
-  float rotacion = 0.0;
+  PVector posicion;
+  PVector velocidad;
+  PVector aceleracion;
+  int r;
+  float direccion;
+  float rotacion;
+  boolean acelera = false;
+  boolean inmunidad;
+  float contador;
   PImage nave;
 
-  
-  Nave( int POSX, int POSY ){
+  Nave() {
+    rotacion = 0;
+    contador = 0;
     nave = loadImage("spaceshipblue.png");
-    posx = POSX;
-    posy = POSY;
+    posicion = new PVector(width/2, height/2);
+    r = 20;
+    direccion = PI/2;
+    velocidad = new PVector(0, 0);
+    inmunidad = true;
   }
+ 
 
   void poner(){
       pushMatrix();
-      translate(posx, posy);
-      rotate(radians(rotacion));
+      translate(posicion.x, posicion.y);
+      rotate(direccion);
       imageMode(CENTER);
       //ellipse(0, 0, 100, 100);
+      if(inmunidad) {
+        tint(map(int(random(10)), 0, 5, 0, 255));
+        contador += 0.1;
+        if(contador > 20){
+          tint(250,250);
+          inmunidad = false;
+        }
+      }
       image(nave,0,0);
       imageMode(0);
       popMatrix(); 
       update();
   }
   
-  void update(){
-      posx += (velocidad * Math.cos( radians(rotacion) ));
-      posy += (velocidad * Math.sin( radians(rotacion) ));   
-      aceleracion=atan2(posy, posx);
-
-      if( velocidad > velocidadMax ){ 
-        velocidad = velocidadMax; 
-      }      
-
-      if( rotacion > 360 ){ 
-        rotacion = 0; 
-      }
-      if( rotacion < 0 ){ 
-        rotacion = 360; 
-      }
-      //while(keyCode == UP){
-      if( keyCode==UP){
-          velocidad+=aceleracion;
-      }
-      if( keyCode == LEFT && keyPressed){
-        rotacion -= 5; 
-      }  
-      if( keyCode == RIGHT && keyPressed){
-        rotacion += 5;
-      }
-      if( key == ' '  && keyPressed==true){
-        //armas.add( new Armas(posx, posy, true));
-      }
-      
-      //if(velocidad>=velocidadMax)velocidad-=aceleracion; println(aceleracion, velocidad);
-
-      if( posx > width+10 )         { posx = width-width-10; }
-      if( posx < width-width-10 )   { posx = width+10; }
-      if( posy > height+10 )        { posy = height-height-10; }
-      if( posy < height-height-10 ) { posy = height+10; }
-
+ void update(){
+    if(acelera){
+      acel();
+    }
+    velocidad.mult(0.90);
+    posicion.add(velocidad);
+    reinicio();
+    cambio();
+    
+  }
+  
+  void reinicio(){
+    if(posicion.x > width+r){
+      posicion.x = -r;
+    } else if(posicion.x < -r){
+      posicion.x = width+r;
+    }
+    if(posicion.y > height+r){
+      posicion.y = -r;
+    } else if(posicion.y < -r){
+      posicion.y = height+r;
+    }
+  }
+  
+  void cambioace(boolean b){
+    acelera = b;
+  }
+  
+  void acel(){
+    PVector force = PVector.fromAngle(direccion-PI/2);
+    velocidad.add(force);
+  }
+  
+  boolean colision(PVector apos, float ar){
+    float d = dist(posicion.x, posicion.y, apos.x, apos.y);
+    //ellipse(apos.x, apos.y, ar, ar);
+    if((d <= r + ar )){
+      return true;
+    } else {
+      return false;
+    }
+  }
+  
+   void cambioRotacion(float a){
+    rotacion = a;
+  }
+  
+  void cambio(){
+    direccion += rotacion;
   }
 }

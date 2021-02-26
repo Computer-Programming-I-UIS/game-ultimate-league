@@ -76,23 +76,19 @@ class Menu{
      if(key=='r'&& keyPressed == true){
        game=3;
         if(game==3){
-        nave.posx=width/2;
-        nave.posy=height/2;
-        nave.velocidad=0;
         if(sonido==0){
           ingame.play();
         }
+       bandera=1;
       }
      }
      if(key=='m'&& keyPressed == true){
        game=1;
         if(game==1){
-        nave.posx=width/2;
-        nave.posy=height/2;
-        nave.velocidad=0;
         if(sonido==0){
           player.play();
         }
+        bandera=1;
       }
     }
   }

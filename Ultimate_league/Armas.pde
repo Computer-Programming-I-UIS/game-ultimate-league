@@ -1,34 +1,36 @@
 class Armas {
-
-  PVector pos;
-  PVector vel;
+  PVector posicion;
+  PVector velocidad;
   float r;
+  PImage bala;
   
-  Armas(PVector shipPos, float angle){
-    pos = new PVector(shipPos.x, shipPos.y);
-    vel = PVector.fromAngle(angle-PI/2);
-    vel.mult(15);
-    r = 10;
+  Armas(PVector posNave, float angulo){
+    posicion = new PVector(posNave.x, posNave.y);
+    velocidad = PVector.fromAngle(angulo-PI/2);
+    velocidad.mult(15);
+    bala = loadImage("bullet.png");
+    r=10;
   }
   
   void update(){
-    pos.add(vel);
+    posicion.add(velocidad);
   }
   
-  void render(){
-    strokeWeight(r);
-    point(pos.x, pos.y);
+  void poner(){
+    imageMode(CENTER);
+    image(bala, posicion.x, posicion.y);
+    imageMode(0);
   }
   
-  boolean hits(PVector apos, float r){
-    float d = dist(pos.x, pos.y, apos.x, apos.y);
+  boolean colision(PVector newposicion, float r){
+    float d = dist(posicion.x, posicion.y, newposicion.x, newposicion.y);
     return (d < r);
   }
   
-  boolean offscreen(){
-    if((pos.x > width+r) || (pos.y > height+r)){
+  boolean fuera(){
+    if((posicion.x > width+r) || (posicion.y > height+r)){
       return true;
-    } else if((pos.x < -r) || (pos.y < -r)){
+    } else if((posicion.x < -r) || (posicion.y < -r)){
       return true;
     } else {
       return false;
