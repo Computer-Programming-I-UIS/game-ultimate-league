@@ -12,6 +12,7 @@ Jhoan Felipe Fonseca Becerra
 
 Estas al mando de la ultima nave humana capas de defender a la tierra de su destruccion
 destruye todos los asteroides que puedas, recuerda que estos de dividen cada vez que los impactas
+tendras 5 segundos de inmunidad al comenzar cada partida
 
 ---
 ## Controles
